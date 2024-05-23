@@ -1,0 +1,54 @@
+
+
+
+# path: D:/temp_2/coco128  # dataset old root dir
+path: C:\Users\Северин\Documents\unik\kursova\DB    # dataset root dir
+train: images/train # train images (relative to 'path') 476 images
+val: images/val   # val images (relative to 'path') 50 images
+
+# Classes
+nc: 23
+names: [
+  'Helicopter',
+  'USSR|CIV/Transport|AN-124',
+  'USSR|CIV/Transport/Recon.|AN-24/26/30',
+  'USSR|Transport|AN-22',
+  'USSR|Transport|AN-12',
+  'USSR|CIV/Transport|AN-2',
+  'USSR|Transport/Refuel.|IL-76/78',
+  'USSR|Surv./MPA|IL-20/38',
+  'CZECHOSLOVAKIA|Trainer/G-A|L-39',
+  'RUSSIA|Trainer|YAK-130',
+  'USSR|AWACS|A-50',
+  'USSR|Bomber|TU-22',
+  'USSR|Strat.Bomber|TU-22M',
+  'USSR|Strat.Bomber/MAP|TU-95/142',
+  'USSR|Strat.Bomber|TU-160',
+  'USSR|Trainer/CIV|TU-134/154',
+  'CIV AIRCRAFT',
+  'USSR|Interceptor/G-A|MIG-31',
+  'USSR|Fighter|MIG-29',
+  'USSR|Mutlirole Fighter|SU-27/30/33/35',
+  'USSR|Fighter/Bomber|SU-34',
+  'USSR|CAS|SU-25',
+  'USSR|Tact.Bomber|SU-24'
+]
+
+# augment:  # Data augmentation section
+#   hsv_h: 0.015  # Change in hue range
+#   hsv_s: 0.7  # Change in saturation range
+#   hsv_v: 0.4  # Change in value range
+#   degrees: 45  # Maximum rotation degrees
+#   translate: 0.1  # Relative translation (percentage)
+#   scale: 0.5  # Scale augmentation (percentage)
+#   shear: 10  # Shear angle (degrees)
+
+data:
+  # Your data path and class definitions...
+  augment:
+    flipud: 0.4  # Probability of random Up/Down flip
+    fliplr: 0.4  # Probability of random Left/Right flip
+    degrees: 0.3
+    # rotate: 90   # Assuming 'rotate' meant random rotation in degrees (adjust if needed)
+    mosaic: 0.1  # Probability of applying mosaic augmentation
+    mixup: 0.05  # Probability of applying mixup augmentation
